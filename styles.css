@@ -1,0 +1,199 @@
+/* ---------- Base Reset ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  padding: 50px 24px;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background:
+    radial-gradient(circle at top left, #dff4ff 0%, transparent 35%),
+    linear-gradient(135deg, #f7fbff 0%, #edf7ff 50%, #f9fcff 100%);
+
+  color: #18324a;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+/* ---------- Heading ---------- */
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  text-align: center;
+
+  color: #163b5c;
+
+  margin-bottom: 4px;
+}
+
+/* Optional decorative line below heading */
+h1::after {
+  content: "";
+  display: block;
+
+  width: 70px;
+  height: 4px;
+
+  margin: 16px auto 0;
+
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, #38a7e0, #8bd4f7);
+}
+
+/* ---------- Filter Panel ---------- */
+fieldset {
+  width: min(100%, 1000px);
+
+  padding: 24px 28px 28px;
+
+  border: 1px solid rgba(81, 165, 211, 0.25);
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  box-shadow:
+    0 12px 35px rgba(53, 116, 153, 0.08),
+    0 2px 8px rgba(53, 116, 153, 0.05);
+
+  backdrop-filter: blur(12px);
+}
+
+/* ---------- Legend ---------- */
+legend {
+  padding: 0 12px;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: #477692;
+}
+
+/* ---------- Buttons ---------- */
+input[type="button"] {
+  appearance: none;
+
+  padding: 12px 20px;
+  margin: 6px;
+
+  border: 1px solid #b8ddf2;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #235574;
+
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 3px 10px rgba(47, 126, 169, 0.08);
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Main filter button */
+#onw {
+  background: linear-gradient(135deg, #4eb6ec, #3198d2);
+
+  border-color: transparent;
+
+  color: white;
+
+  box-shadow: 0 6px 16px rgba(49, 152, 210, 0.25);
+}
+
+/* Button hover */
+input[type="button"]:hover {
+  transform: translateY(-2px);
+
+  background: #eef9ff;
+
+  border-color: #83c8ec;
+
+  box-shadow: 0 7px 18px rgba(47, 126, 169, 0.15);
+}
+
+#onw:hover {
+  background: linear-gradient(135deg, #35a8e5, #238ac5);
+
+  box-shadow: 0 8px 20px rgba(49, 152, 210, 0.32);
+}
+
+/* Button click */
+input[type="button"]:active {
+  transform: translateY(0);
+}
+
+/* Keyboard accessibility */
+input[type="button"]:focus-visible {
+  outline: 3px solid rgba(54, 166, 224, 0.3);
+  outline-offset: 3px;
+}
+
+/* ---------- Tableau Dashboard ---------- */
+tableau-viz {
+  display: block;
+
+  width: min(100%, 1000px) !important;
+  max-width: 100%;
+
+  border: 1px solid rgba(92, 169, 210, 0.18);
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  background: white;
+
+  box-shadow:
+    0 20px 50px rgba(53, 116, 153, 0.11),
+    0 3px 12px rgba(53, 116, 153, 0.06);
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 700px) {
+  body {
+    padding: 30px 16px;
+    gap: 24px;
+  }
+
+  h1 {
+    letter-spacing: -1px;
+  }
+
+  fieldset {
+    padding: 20px 16px;
+  }
+
+  input[type="button"] {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  tableau-viz {
+    width: 100% !important;
+  }
+}
